@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Charlotte’s quiet, local phone and browser habitat.">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="manifest" href="/charlotte-site/manifest.webmanifest">
+    <link rel="icon" href="/charlotte-site/icons/charlotte.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/charlotte-site/icons/charlotte-touch.png">
+    <title>Charlotte</title>
+    <script type="module" crossorigin src="/charlotte-site/assets/index-D0JCJbxA.js"></script>
+    <link rel="stylesheet" crossorigin href="/charlotte-site/assets/index-DhIfaWSf.css">
+  </head>
+  <body>
+    <main aria-label="Charlotte’s local playground">
+      <div id="scene"></div>
+      <nav class="controls" aria-label="Playground controls">
+        <button id="leave" aria-expanded="false" aria-controls="offering">Leave a fly</button>
+        <button id="pause" aria-pressed="false">Pause</button>
+        <button id="hide" aria-pressed="false">Hide</button>
+        <details id="settings">
+          <summary>Settings</summary>
+          <div class="settings-panel"><button id="reset">Reset</button></div>
+        </details>
+      </nav>
+      <form id="offering" hidden>
+        <label class="sr-only" for="message">Words for your fly</label>
+        <input id="message" maxlength="4000" autocomplete="off" placeholder="Leave a fly…" required aria-describedby="fly-privacy">
+        <p class="sr-only" id="fly-privacy">Your words become a fly and are discarded. They cannot be opened again.</p>
+        <button type="submit">Leave a fly</button>
+      </form>
+      <p id="status" class="sr-only" role="status"></p>
+      <dialog id="reset-dialog" aria-labelledby="reset-title" aria-describedby="reset-description">
+        <h1 id="reset-title">Reset this habitat?</h1>
+        <p id="reset-description">This removes this habitat on this device.</p>
+        <form method="dialog"><button value="cancel" autofocus>Cancel</button><button value="reset">Reset</button></form>
+      </dialog>
+    </main>
+  </body>
+</html>
